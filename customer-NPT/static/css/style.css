@@ -55,3 +55,7 @@ input[type="file"] {
   height: 50px;
   animation: spin 2s linear infinite;
 }
+
+table, th, td {
+  border: 1px solid black;
+}

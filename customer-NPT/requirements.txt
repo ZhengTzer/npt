@@ -12,3 +12,5 @@ jieba
 numpy
 flask-jsonpify
 xlsxWriter
+lifetimes
+matplotlib

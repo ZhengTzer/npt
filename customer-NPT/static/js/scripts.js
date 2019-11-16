@@ -94,7 +94,23 @@ $('#btn-predict').click(function () {
           // Get and display the result
           $('.loader').hide();
           $('#result').fadeIn(1000);
-          $('#result').text(data);
+          $('#result').html(data);
       },
   });
+  $.ajax({
+    type: 'POST',
+    url: '/predict',
+    data: JSON.stringify({
+        'data' : data,
+    }),
+    contentType: 'application/json;charset=UTF-8',
+    success: function(response){
+        // fill with html
+        $('#result').html(response.result);
+
+    },
+    error: function(error) {
+        // console.log(error);
+    }
+});
 });

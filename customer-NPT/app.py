@@ -38,11 +38,13 @@ from lifetimes.utils import calibration_and_holdout_data
 
 app = Flask(__name__)
 
-app.secret_key = os.urandom(12)  # Generic key for dev purposes only
+# app.secret_key = os.urandom(12)  # Generic key for dev purposes only
+app.secret_key = b'\xd9e\x0cm5\xf4\x7f@\xfb\xee[\xa1'
+
 
 stripe_keys = {
-  'secret_key': os.environ['secret_key'],
-  'publishable_key': os.environ['publishable_key']
+  'secret_key':'sk_test_gIz6GEr5lWI18DfYySMEhJDc00J6cpbSaV', #os.environ['secret_key'],
+  'publishable_key':'pk_test_GfV4kl0nfS6Eb8Wr0sBOPMss009QCCHLpN' #os.environ['publishable_key']
 }
 
 stripe.api_key = stripe_keys['secret_key']
@@ -165,7 +167,7 @@ def upload():
         
         d2 = data.sort_values('frequency', ascending=False)
 
-        bgf = BetaGeoFitter(penalizer_coef=0.0)
+        bgf = BetaGeoFitter(penalizer_coef=0.001)
         bgf.fit(data['frequency'], data['recency'], data['T'])
 
         t = 14
