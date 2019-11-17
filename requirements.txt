@@ -1,0 +1,16 @@
+Flask
+WTForms
+SQLAlchemy
+bcrypt
+requests
+flask-heroku
+gunicorn
+stripe
+pandas
+scikit-learn
+jieba
+numpy
+flask-jsonpify
+xlsxWriter
+lifetimes
+matplotlib

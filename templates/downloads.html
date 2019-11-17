@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+            table, th, td {
+                border: 1px solid black;
+            }
+            </style>
+    <meta charset="UTF-8">
+    <title>Target high values customers and retain churning customers</title>
+    
+</head>
+<body>
+{% for table in tables %}
+            {{header[loop.index]}}
+            {{ table | safe }}
+{% endfor %}
+</body>
+</html>

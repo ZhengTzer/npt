@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block body %}
+{% include "navbar.html" %}
+<section class="hero is-primary is-bold is-large">
+  <div class="hero-body" style="padding-top: 20px">
+    <div>
+      <h2>Donation</h2>
+      {% if not user.active %}
+      <form action="/charge" method="post">
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ user.key }}"
+          data-description="Survival Analysis Donation" data-amount="1000" data-locale="auto">
+          </script>
+      </form>
+      {% endif %}
+      {% if user.active %}
+      <div><span>Thanks for your donation</span></div>
+      {% endif %}
+    </div>
+    <div>
+      {% if user.active %}
+      <center>
+      <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+          Upload
+        </label>
+        <br>
+        <br>
+        <br>
+        <input type="file" name="file" id="imageUpload" accept=".csv">
+      </form>
+      </center>
+      {% endif %}
+      {% if not user.active %}
+      <div><span>for keeping this running</span></div>
+      {% endif %}
+      <div class="image-section" style="display:none;">
+        <span></span>
+          <span></span>
+          <span></span>
+        <div>
+          <center>
+          
+          <button type="button" class="upload-label" id="btn-predict">Predict churn customer</button>
+        </center>
+        </div>
+      </div>
+    </div>
+    <center>
+    <div class="loader" style="display:none;"></div>
+    <h1 id="result"> 
+    {% include 'downloads.html' %}
+    </h1>
+    </center>
+    <center>
+    <div style="padding-top: 10%">
+      <span>inlcude column as below in your file: salesDate, sales, memberID</span>      
+    </div>
+    <img src="../static/img/example.jpg">
+  </center>
+  </div>
+
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="../static/js/scripts.js"></script>
+{% endblock %}
