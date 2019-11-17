@@ -1,8 +1,8 @@
-Know the % your resume match with job description
+Retain more customers
 
 upload folder contains example for testing. working product could be explored here @
 
 
-![Homepage](https://raw.githubusercontent.com/ZhengTzer/resume-scanner/master/resume-scanner-01.png)
+![Homepage](https://github.com/ZhengTzer/npt/blob/master/01-home-page.png)
 
-![Result](https://raw.githubusercontent.com/ZhengTzer/resume-scanner/master/resume-scanner-02.png)
+![Result](https://github.com/ZhengTzer/npt/blob/master/02-result-page.png)
