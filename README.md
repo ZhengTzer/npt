@@ -1,6 +1,6 @@
 Retain more customers
 
-upload folder contains example for testing. working product could be explored here @
+upload folder contains example for testing.
 
 special thanks to Zyphre who helped @https://github.com/Zyphre
 
